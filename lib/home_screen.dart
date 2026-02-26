@@ -65,10 +65,23 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
      ),
-     body: const TabBarView(
+     body: TabBarView(
       children:[
-        Text('Chat'),
-         Text('Status'),
+        ListView.builder(
+          itemCount: 100,
+          itemBuilder: (context, index){
+            return ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg'),
+              ),
+              title: Text('Salman Khan'),
+              subtitle: Text('hi where are you?'),
+              trailing: Text('4:51 PM'),
+
+            );
+
+          }),
+        Text('Status'),
           Text('Calls'),
           Text('Camera'),
       ]
