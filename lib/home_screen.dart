@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ListView.builder(
           itemCount: 100,
           itemBuilder: (context, index){
-            return ListTile(
+            return const ListTile(
               leading: CircleAvatar(
                 backgroundImage: NetworkImage('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg'),
               ),
@@ -80,9 +80,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
             );
 
-          }),
+          }
+          ),
         Text('Status'),
-          Text('Calls'),
+           ListView.builder(
+          itemCount: 100,
+          itemBuilder: (context, index){
+            return ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg'),
+              ),
+              title: Text('Salman Khan'),
+              subtitle: Text('27 Febuary 5;40 PM'),
+              trailing: Icon(index/2 ==0 ?Icons.video_call:Icons.phone ),
+
+            );
+
+          }
+          ),
           Text('Camera'),
       ]
       ),
