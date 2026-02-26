@@ -18,14 +18,54 @@ class _HomeScreenState extends State<HomeScreen> {
       title: Text('Whatsapp'),
         bottom: TabBar(
           tabs: [
-            Text('Chat'),
-            Text('Status'),
-            Text('Calls'),
-            Icon(Icons.camera_alt_rounded),
+         Tab(
+          child: Text('Chat'),
+         ),
+         Tab(
+          child: Text('Status'),
+         ),
+         Tab(
+          child: Text('Calls'),
+         ),
+           
+          Tab(
+            child: Icon(Icons.camera_alt),
+          )
           ]
           ),
+          actions:[
+            Icon(Icons.search_off_outlined),
+            SizedBox(
+              width: 10,
+            ),
+            PopupMenuButton(
+              icon: Icon(Icons.more_vert_sharp),
+              itemBuilder: (context,) => const [
+                PopupMenuItem(
+                  value: '1',
+                  child: Text('New Group'),
+                   ),
+                   PopupMenuItem(
+                  value: '2',
+                  child: Text('New Contact'),
+                   ),
+                   PopupMenuItem(
+                  value: '3',
+                  child: Text('Setting'),
+                   ),
+                   PopupMenuItem(
+                  value: '4',
+                  child: Text('LogOut'),
+                   ),
+
+
+              ]),
+            SizedBox(
+              width: 15,
+            )
+          ],
      ),
-     body: TabBarView(
+     body: const TabBarView(
       children:[
         Text('Chat'),
          Text('Status'),
